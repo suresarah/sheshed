@@ -101,8 +101,8 @@ h1,h2,p{margin:0;font-weight:400}
   padding:calc(90 * var(--u)) calc(34 * var(--u)) calc(30 * var(--u));background:linear-gradient(to top, rgba(0,0,0,.7), rgba(0,0,0,.45) 55%, rgba(0,0,0,0));color:var(--cream);text-shadow:0 1px 2px rgba(0,0,0,.4),0 0 16px rgba(0,0,0,.45)}
 /* "back to projects" with a short rule, like the opening labels; the rule stretches on hover */
 .back{display:inline-flex;align-items:baseline;gap:calc(12 * var(--u));font:400 max(20px, calc(30 * var(--u)))/1 var(--display);text-decoration:none;color:var(--cream)}
-.back::after{box-shadow:0 0 6px rgba(0,0,0,.5);content:"";width:calc(60 * var(--u));min-width:28px;height:1px;background:currentColor;transform:translateY(-.3em);transition:width .4s ease}
-.back:hover::after,.back:focus-visible::after{width:calc(110 * var(--u))}
+.back::before{box-shadow:0 0 6px rgba(0,0,0,.5);content:"";width:calc(60 * var(--u));min-width:28px;height:1px;background:currentColor;transform:translateY(-.3em);transition:width .4s ease}
+.back:hover::before,.back:focus-visible::before{width:calc(110 * var(--u))}
 .copy{font:300 max(12.5px, calc(13 * var(--u)))/1.3 var(--body);color:var(--cream);opacity:.75}
 
 /* up/down page arrows, as in the original */
