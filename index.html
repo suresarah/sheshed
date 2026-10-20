@@ -42,6 +42,9 @@ h1,h2,p{margin:0;font-weight:400}
 .w{position:absolute;left:calc(var(--x) * var(--u));top:calc(var(--y) * var(--u));width:calc(var(--w) * var(--u))}
 .tag{min-height:calc(var(--bh,0) * var(--u))}
 .tag.boxed{background:rgba(0,0,0,var(--a,.43));padding:calc(var(--pt,5) * var(--u)) calc(var(--px,12) * var(--u)) calc(var(--pb,9) * var(--u))}
+.tag.fit{width:max-content}
+/* keep on one line where there is room (from 900px the text scales with the page); narrower screens may wrap */
+@media (min-width:900px){.one-line{white-space:nowrap}}
 .tag.from-bottom{top:auto;bottom:calc(var(--yb) * var(--u))}
 .tag .note{margin-top:calc(6 * var(--u))}
 /* text sitting straight on a photo gets a soft halo so it stays readable */
@@ -232,8 +235,8 @@ h1,h2,p{margin:0;font-weight:400}
 <section class="pg has-bg" style="--h:630">
   <div class="bg"><img src="img/p09-0.jpg" alt="Marty the dog in the sun" loading="lazy"></div>
   <div class="stage">
-    <div class="w tag boxed" style="--x:664;--y:20;--w:272;--bh:38;--a:0.78;--px:11;--pt:4;--pb:6" data-reveal>
-      <h2 class="cap sub" style="--fs:28;--lh:24">marty taking a sunshine break</h2>
+    <div class="w tag boxed fit" style="--x:664;--y:20;--w:272;--bh:38;--a:0.78;--px:11;--pt:4;--pb:6" data-reveal>
+      <h2 class="cap sub" style="--fs:28;--lh:24;white-space:nowrap">marty taking a sunshine break</h2>
     </div>
   </div>
 </section>
@@ -268,7 +271,7 @@ h1,h2,p{margin:0;font-weight:400}
   <div class="stage">
     <div class="w tag boxed" style="--x:464;--y:32;--w:495;--bh:155;--px:14" data-reveal>
       <h2 class="cap">Repurposed the brick from the yard</h2>
-      <p class="note">and layed it out, relayed it out,<br>moved it 5 more times</p>
+      <p class="note one-line">and layed it out, relayed it out, moved it 5 more times</p>
     </div>
   </div>
 </section>
