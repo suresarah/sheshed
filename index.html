@@ -110,6 +110,9 @@ h1,h2,p{margin:0;font-weight:400}
 .arrows button{all:unset;cursor:pointer;width:40px;height:32px;display:grid;place-items:center;color:#fff;filter:drop-shadow(0 1px 2px rgba(0,0,0,.45))}
 .arrows button:focus-visible{outline:2px solid #fff;outline-offset:2px}
 .arrows svg{width:32px;height:20px}
+/* step aside while a caption is underneath */
+.arrows{transition:opacity .25s}
+.arrows.clear-out{opacity:0;pointer-events:none}
 @media (max-width:640px){.arrows{display:none}}
 /* Transitions. The opening fades in as the original did (title first, labels a second later)
    and its shade lifts as you scroll; captions and collage photos ease in as each page arrives.
@@ -300,7 +303,7 @@ h1,h2,p{margin:0;font-weight:400}
   <div class="stage">
     <div class="w pic" style="--x:0;--y:-22;--w:511;--bh:681"><img src="img/p14-3.jpg" alt="Adding sand and water (1 of 2)" loading="lazy"></div>
     <div class="w pic" style="--x:504;--y:-32;--w:520;--bh:692"><img src="img/p14-4.jpg" alt="The sink in place (2 of 2)" loading="lazy"></div>
-    <div class="w tag boxed from-bottom" style="--x:452;--y:522;--w:572;--bh:88;--a:0.45;--yb:33;--px:12" data-reveal>
+    <div class="w tag boxed from-bottom" style="--x:420;--y:522;--w:572;--bh:88;--a:0.45;--yb:33;--px:12" data-reveal>
       <h2 class="cap">adding the sand and water</h2>
       <p class="note right">and putting the sink in place post-plumbing</p>
     </div>
@@ -435,7 +438,17 @@ function current(){ var y = scrollY + 2, i = 0; pages.forEach(function(p, n){ if
 function go(d){ var i = Math.max(0, Math.min(pages.length - 1, current() + d)); var t = pages[i].offsetTop; if (d < 0 && Math.abs(scrollY - pages[current()].offsetTop) > 4) t = pages[current()].offsetTop; scrollTo({top: t}); }
 document.getElementById("up").addEventListener("click", function(){ go(-1); });
 document.getElementById("down").addEventListener("click", function(){ go(1); });
-function arrows(){ var i = current(); document.getElementById("up").hidden = scrollY < 4; document.getElementById("down").hidden = i === pages.length - 1; }
+var nav = document.querySelector(".arrows"), captions = [].slice.call(document.querySelectorAll(".tag, .intro-card"));
+function arrows(){
+  var i = current(); document.getElementById("up").hidden = scrollY < 4; document.getElementById("down").hidden = i === pages.length - 1;
+  // fade the arrows out while they sit over a caption, so they never cover text
+  var a = nav.getBoundingClientRect(), pad = 12;
+  nav.classList.toggle("clear-out", captions.some(function(c){
+    var r = c.getBoundingClientRect();
+    return r.right > a.left - pad && r.left < a.right + pad && r.bottom > a.top - pad && r.top < a.bottom + pad;
+  }));
+}
+addEventListener("resize", arrows);
 addEventListener("scroll", arrows, {passive: true}); arrows();
 </script>
 </body>
