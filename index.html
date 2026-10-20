@@ -52,7 +52,10 @@ h1,h2,p{margin:0;font-weight:400}
 .p1 .shade{position:absolute;inset:0;background:rgba(0,0,0,.41)}
 .p1 h1{font:400 calc(203 * var(--u))/.75 var(--display);color:#fff;text-align:center;letter-spacing:-.01em;padding-top:calc(30 * var(--u))}
 .p1 .small{font:400 calc(16 * var(--u))/1 var(--display);color:#fff;white-space:nowrap}
-.hair{height:1px;background:#fff}
+/* Rules sit 14 units outside the lettering on both sides: above the top of the h, below the base of shed. */
+.p1{--top-row:89;--bottom-row:420.2}
+.rule-row{display:flex;align-items:baseline;gap:calc(10 * var(--u))}
+.rule-row .hair{flex:1;height:1px;background:#fff;margin-bottom:calc(4 * var(--u))}
 
 .intro-card{background:rgba(255,255,255,.76);padding:calc(11 * var(--u)) calc(10 * var(--u)) calc(16 * var(--u)) calc(19 * var(--u));min-height:calc(282 * var(--u))}
 .intro{color:var(--navy);margin-top:calc(9 * var(--u))}
@@ -86,13 +89,13 @@ h1,h2,p{margin:0;font-weight:400}
   <div class="bg"><img src="img/p01-0.jpg" alt="The finished she shed at dusk: a wall of salvaged white window frames under a timber roof with string lights" fetchpriority="high"></div>
   <div class="shade"></div>
   <div class="stage">
-    <div class="w hair" style="--x:321;--y:150;--w:76"></div>
-    <div class="w hair" style="--x:454;--y:150;--w:264"></div>
-    <div class="w hair" style="--x:404;--y:433;--w:252"></div>
-    <span class="w small" style="--x:406;--y:144;--w:40">the</span>
+    <div class="w rule-row" style="--x:304.5;--y:var(--top-row);--w:413">
+      <span class="hair" style="flex:0 0 calc(76 * var(--u))"></span><span class="small">the</span><span class="hair"></span>
+    </div>
     <h1 class="w" style="--x:120;--y:92;--w:782">she<br>shed</h1>
-    <span class="w small" style="--x:305;--y:424;--w:177">we’re doing it</span>
-    <span class="w small right" style="--x:545;--y:424;--w:177">we did it</span>
+    <div class="w rule-row" style="--x:304.5;--y:var(--bottom-row);--w:413">
+      <span class="small">we’re doing it</span><span class="hair"></span><span class="small">we did it</span>
+    </div>
   </div>
 </section>
 
