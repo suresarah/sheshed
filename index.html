@@ -43,15 +43,15 @@ h1,h2,p{margin:0;font-weight:400}
 .tag{min-height:calc(var(--bh,0) * var(--u))}
 .tag.boxed{background:rgba(0,0,0,var(--a,.43));padding:calc(var(--pt,5) * var(--u)) calc(var(--px,12) * var(--u)) calc(var(--pb,9) * var(--u))}
 .tag.from-bottom{top:auto;bottom:calc(var(--yb) * var(--u))}
-.tag .note{margin-top:calc(4 * var(--u))}
+.tag .note{margin-top:calc(6 * var(--u))}
 /* text sitting straight on a photo gets a soft halo so it stays readable */
 .lift{text-shadow:0 1px 2px rgba(0,0,0,.35),0 0 18px rgba(0,0,0,.45)}
 .halo-light{text-shadow:0 0 10px rgba(255,255,255,.75),0 0 24px rgba(255,255,255,.5)}
 .pic{height:calc(var(--bh) * var(--u));overflow:hidden}
 .pic img{width:100%;height:100%;object-fit:cover;object-position:var(--op,50% 50%)}
 .cap{font:400 calc(var(--fs,69) * .67 * var(--u))/max(calc(var(--lh,41) * var(--u)), .89em) var(--display);color:#fff;padding-top:calc(6 * var(--u));letter-spacing:.005em}
-.note{font:300 max(12px, calc(var(--fs,13) * var(--u)))/1.3 var(--body);color:#fff}
-.cap.sub{font-size:max(13px, calc(var(--fs) * .67 * var(--u)))}
+.note{font:400 max(14px, calc(16 * var(--u)))/1.4 var(--body);letter-spacing:.01em;color:#fff}
+.cap.sub{font-size:max(16px, calc(var(--fs) * .8 * var(--u)));line-height:1.15}
 .dark{color:#000}.navy{color:var(--navy)}.cream{color:var(--cream)}
 .right{text-align:right}
 
@@ -68,9 +68,9 @@ h1,h2,p{margin:0;font-weight:400}
 
 .intro-card{background:rgba(255,255,255,.76);padding:calc(11 * var(--u)) calc(10 * var(--u)) calc(16 * var(--u)) calc(19 * var(--u));min-height:calc(282 * var(--u))}
 .intro{color:var(--navy);margin-top:calc(9 * var(--u))}
-.intro p{font:400 max(12px, calc(13 * var(--u)))/1.35 var(--body)}
+.intro p{font:400 max(14px, calc(15 * var(--u)))/1.45 var(--body)}
 .intro p + p{margin-top:calc(10 * var(--u))}
-.intro .aside{font-size:max(11px, calc(10 * var(--u)));margin-top:calc(16 * var(--u))}
+.intro .aside{font-size:max(13px, calc(12.5 * var(--u)));margin-top:calc(16 * var(--u))}
 @media (max-width:640px){
   .intro-card{width:auto;right:calc(35 * var(--u))}
   /* on phones caption blocks get a readable minimum width and stay on screen */
@@ -81,7 +81,8 @@ h1,h2,p{margin:0;font-weight:400}
   .p1 .stage{--u:calc(100vw / 540);inset:auto;left:calc(50vw - 511 * var(--u));top:calc(50svh - 266 * var(--u));width:calc(1024 * var(--u));height:calc(560 * var(--u))}
 }
 
-.vid{height:calc(var(--bh) * var(--u));background:#000;padding:calc(5 * var(--u))}
+.vid{width:calc(var(--w) * var(--u));height:calc(var(--bh) * var(--u));background:#000;padding:calc(5 * var(--u));margin-top:calc(16 * var(--u))}
+@media (max-width:640px){.vid{width:min(62vw, 240px);height:calc(min(62vw, 240px) * 403 / 232)}}
 .vid iframe{width:100%;height:100%;border:0;display:block}
 
 /* ending */
@@ -91,7 +92,7 @@ h1,h2,p{margin:0;font-weight:400}
 .back{display:inline-flex;align-items:baseline;gap:calc(12 * var(--u));font:400 max(20px, calc(30 * var(--u)))/1 var(--display);text-decoration:none;color:var(--cream)}
 .back::after{box-shadow:0 0 6px rgba(0,0,0,.5);content:"";width:calc(60 * var(--u));min-width:28px;height:1px;background:currentColor;transform:translateY(-.3em);transition:width .4s ease}
 .back:hover::after,.back:focus-visible::after{width:calc(110 * var(--u))}
-.copy{font:300 max(11px, calc(12 * var(--u)))/1.3 var(--body);color:var(--cream);opacity:.75}
+.copy{font:300 max(12.5px, calc(13 * var(--u)))/1.3 var(--body);color:var(--cream);opacity:.75}
 
 /* up/down page arrows, as in the original */
 .arrows{position:fixed;right:max(18px, env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%);z-index:5;display:flex;flex-direction:column;gap:4px}
@@ -169,7 +170,7 @@ h1,h2,p{margin:0;font-weight:400}
   <div class="stage">
     <div class="w tag boxed" style="--x:565;--y:13;--w:439;--bh:126;--px:10" data-reveal>
       <h2 class="cap">we also started building a tool shed</h2>
-      <p class="note right" style="--fs:12">and dried in the side of the original shed</p>
+      <p class="note right">and dried in the side of the original shed</p>
     </div>
   </div>
 </section>
@@ -200,12 +201,12 @@ h1,h2,p{margin:0;font-weight:400}
 <section class="pg has-bg" style="--h:630">
   <div class="bg"><img src="img/p07-0.jpg" alt="The rented excavator in the yard" loading="lazy"></div>
   <div class="stage">
-    <div class="w tag halo-light" style="--x:39;--y:25;--w:363" data-reveal>
+    <div class="w tag halo-light" style="--x:39;--y:25;--w:430" data-reveal>
       <h2 class="cap dark">excavator rental</h2>
       <p class="note dark">flattening out the ground, digging holes for the posts</p>
-    </div>
-    <div class="w vid" style="--x:40;--y:123;--w:232;--bh:403" data-fade="1.5">
-      <iframe src="https://player.vimeo.com/video/641516327?autoplay=1&amp;muted=1&amp;loop=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;dnt=1" title="Excavator video" allow="autoplay; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <div class="vid" style="--w:232;--bh:403" data-fade="1.5">
+        <iframe src="https://player.vimeo.com/video/641516327?autoplay=1&amp;muted=1&amp;loop=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;dnt=1" title="Excavator video" allow="autoplay; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
     </div>
   </div>
 </section>
@@ -392,16 +393,25 @@ setUnit(); addEventListener("resize", setUnit);
 
 // Reveal captions, collage photos and the video as their page scrolls in.
 var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-if (!reduce && "IntersectionObserver" in window) {
+if (!reduce) {
   document.documentElement.classList.add("motion");
   // stagger the photos within each collage
   [].forEach.call(document.querySelectorAll(".pg"), function(pg){
     [].forEach.call(pg.querySelectorAll(".pic"), function(p, i){ p.style.setProperty("--d", (i * 0.12) + "s"); });
   });
-  var io = new IntersectionObserver(function(es){
-    es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
-  }, {threshold: 0.2});
-  [].forEach.call(document.querySelectorAll("[data-reveal], .pic, [data-fade]"), function(el){ io.observe(el); });
+  // on every scroll, reveal anything that has come on screen (more reliable than waiting for observer callbacks after a jump)
+  var waiting = [].slice.call(document.querySelectorAll("[data-reveal], .pic, [data-fade]"));
+  function sweep(){
+    var h = innerHeight;
+    waiting = waiting.filter(function(el){
+      var r = el.getBoundingClientRect();
+      if (r.top < h * 0.92 && r.bottom > h * 0.04) { el.classList.add("in"); return false; }
+      return true;
+    });
+  }
+  addEventListener("scroll", sweep, {passive: true});
+  addEventListener("resize", sweep);
+  sweep();
   // the opening shade lifts as you scroll away from it, like the original
   var hero = document.getElementById("p1"), shade = hero.querySelector(".shade");
   addEventListener("scroll", function(){ shade.style.opacity = Math.max(0, 1 - scrollY / hero.offsetHeight); }, {passive: true});
