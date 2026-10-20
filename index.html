@@ -43,6 +43,9 @@ h1,h2,p{margin:0;font-weight:400}
 .tag{min-height:calc(var(--bh,0) * var(--u))}
 .tag.boxed{background:rgba(0,0,0,var(--a,.43));padding:calc(var(--pt,5) * var(--u)) calc(var(--px,12) * var(--u)) calc(var(--pb,9) * var(--u))}
 .tag.fit{width:max-content}
+/* light hairline underline on the email link, firming up on hover */
+.cap a{text-decoration-line:underline;text-decoration-thickness:1px;text-underline-offset:.22em;text-decoration-color:rgba(255,238,210,.45);transition:text-decoration-color .2s}
+.cap a:hover,.cap a:focus-visible{text-decoration-color:currentColor}
 /* keep on one line where there is room (from 900px the text scales with the page); narrower screens may wrap */
 @media (min-width:900px){.one-line{white-space:nowrap}}
 .tag.from-bottom{top:auto;bottom:calc(var(--yb) * var(--u))}
