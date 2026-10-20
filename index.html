@@ -52,8 +52,10 @@ h1,h2,p{margin:0;font-weight:400}
 .p1 .shade{position:absolute;inset:0;background:rgba(0,0,0,.41)}
 .p1 h1{font:400 calc(203 * var(--u))/.75 var(--display);color:#fff;text-align:center;letter-spacing:-.01em;padding-top:calc(30 * var(--u))}
 .p1 .small{font:400 calc(16 * var(--u))/1 var(--display);color:#fff;white-space:nowrap}
-/* Rules sit 14 units outside the lettering on both sides: above the top of the h, below the base of shed. */
-.p1{--top-row:89;--bottom-row:420.2}
+/* Rules where the original has them: the top one 15 units above the top of she's lowercase,
+   the bottom one 15 units below shed. The top-right rule starts just after the h instead of crossing it. */
+.p1{--top-row:137.7;--bottom-row:422}
+.hair-solo{height:1px;background:#fff}
 .rule-row{display:flex;align-items:baseline;gap:calc(10 * var(--u))}
 .rule-row .hair{flex:1;height:1px;background:#fff;margin-bottom:calc(4 * var(--u))}
 
@@ -89,11 +91,12 @@ h1,h2,p{margin:0;font-weight:400}
   <div class="bg"><img src="img/p01-0.jpg" alt="The finished she shed at dusk: a wall of salvaged white window frames under a timber roof with string lights" fetchpriority="high"></div>
   <div class="shade"></div>
   <div class="stage">
-    <div class="w rule-row" style="--x:304.5;--y:var(--top-row);--w:413">
-      <span class="hair" style="flex:0 0 calc(76 * var(--u))"></span><span class="small">the</span><span class="hair"></span>
+    <div class="w rule-row" style="--x:321;--y:var(--top-row);--w:110">
+      <span class="hair" style="flex:0 0 calc(76 * var(--u))"></span><span class="small">the</span>
     </div>
+    <span class="w hair-solo" style="--x:481;--y:150;--w:237"></span>
     <h1 class="w" style="--x:120;--y:92;--w:782">she<br>shed</h1>
-    <div class="w rule-row" style="--x:304.5;--y:var(--bottom-row);--w:413">
+    <div class="w rule-row" style="--x:305;--y:var(--bottom-row);--w:417">
       <span class="small">we’re doing it</span><span class="hair"></span><span class="small">we did it</span>
     </div>
   </div>
