@@ -57,6 +57,11 @@ h1,h2,p{margin:0;font-weight:400}
 
 /* opening page */
 .p1 .shade{position:absolute;inset:0;background:rgba(0,0,0,.41)}
+/* Script logo from the portfolio, turned white by using the PNG as a mask; top-left of the opening, links home */
+.logo{position:absolute;z-index:2;left:clamp(16px, 2.6vw, 40px);top:clamp(16px, 2.4vw, 34px);width:clamp(72px, 7vw, 112px);aspect-ratio:371 / 279;background:#fff;
+  -webkit-mask:url(img/sarahleach-logo.png) center / contain no-repeat;mask:url(img/sarahleach-logo.png) center / contain no-repeat;
+  transition:transform .3s}
+.logo:hover,.logo:focus-visible{transform:rotate(-4deg)}
 .p1 h1{font:400 calc(203 * var(--u))/.75 var(--display);color:#fff;text-align:center;letter-spacing:-.01em;padding-top:calc(30 * var(--u))}
 .p1 .small{font:400 max(12px, calc(16 * var(--u)))/1 var(--display);color:#fff;white-space:nowrap;text-shadow:0 0 12px rgba(0,0,0,.6)}
 /* Rules where the original has them: the top one 15 units above the top of she's lowercase,
@@ -104,7 +109,7 @@ h1,h2,p{margin:0;font-weight:400}
    and its shade lifts as you scroll; captions and collage photos ease in as each page arrives.
    Only applied when JS is running and the viewer hasn't asked for reduced motion. */
 @media (prefers-reduced-motion:no-preference){
-  .motion .p1 h1,.motion .p1 .rule-row:first-child,.motion .p1 .hair-solo{animation:fade 2s ease-out both}
+  .motion .p1 h1,.motion .p1 .rule-row:first-child,.motion .p1 .hair-solo,.motion .logo{animation:fade 2s ease-out both}
   .motion .p1 .rule-row:last-child{animation:fade 2s ease-out 1s both}
   @keyframes fade{from{opacity:0}}
   .motion [data-reveal]{opacity:0;transform:translateY(calc(24 * var(--u)));transition:opacity .9s ease-out,transform 1.1s cubic-bezier(.2,.7,.2,1)}
@@ -126,6 +131,7 @@ h1,h2,p{margin:0;font-weight:400}
 <section class="pg p1 has-bg" style="--h:1041" id="p1">
   <div class="bg"><img src="img/p01-0.jpg" alt="The finished she shed at dusk: a wall of salvaged white window frames under a timber roof with string lights" fetchpriority="high"></div>
   <div class="shade"></div>
+  <a class="logo" href="https://sarahleach.design/" aria-label="Sarah Leach, design portfolio"></a>
   <div class="stage">
     <div class="w rule-row" style="--x:321;--y:var(--top-row);--w:110">
       <span class="hair" style="flex:0 0 calc(76 * var(--u))"></span><span class="small">the</span>
